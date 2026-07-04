@@ -64,6 +64,34 @@ nix run nixpkgs#opencode           # or github:anomalyco/opencode for latest dev
 > [!TIP]
 > Remove versions older than 0.1.x before installing.
 
+### NuX Agent Upgrade
+
+This fork includes **NuX**, an experimental upgrade layer that adds safer project-aware agent behavior on top of OpenCode:
+
+- planning before edits,
+- command and path risk checks,
+- local self-learning memory with secret redaction,
+- benchmark smoke records,
+- release-readiness documentation.
+
+Quick start from the repository root:
+
+```bash
+bun install
+bun run nux:doctor
+bun run nux:plan "Improve this project"
+bun run nux:risk "git status"
+bun run nux:bench
+```
+
+NuX docs:
+
+- [NuX overview](./Nux.md)
+- [NuX installation guide](./docs/nux-installation.md)
+- [NuX release guide](./docs/nux-release-guide.md)
+- [NuX release notes](./RELEASE_NOTES_NUX.md)
+- [NuX package README](./packages/nux/README.md)
+
 ### Desktop App (BETA)
 
 OpenCode is also available as a desktop application. Download directly from the [releases page](https://github.com/anomalyco/opencode/releases) or [opencode.ai/download](https://opencode.ai/download).
