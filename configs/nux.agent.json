@@ -1,0 +1,34 @@
+{
+  "$schema": "./nux.agent.schema.json",
+  "name": "NuX Agent Upgrade",
+  "version": "0.1.0",
+  "mode": "balanced",
+  "language": "auto",
+  "memory": {
+    "enabled": true,
+    "path": ".nux/memory.jsonl",
+    "maxItems": 1000,
+    "minScoreToSave": 0.55,
+    "redactSecrets": true,
+    "localOnly": true
+  },
+  "planner": {
+    "enabled": true,
+    "maxSteps": 8,
+    "requireVerificationStep": true,
+    "requireRollbackNote": true
+  },
+  "risk": {
+    "defaultPolicy": "ask",
+    "blockDangerousCommands": true,
+    "blockSecretPaths": true,
+    "approvalRequiredForNetwork": true,
+    "approvalRequiredForInstall": true,
+    "approvalRequiredForGitPush": true
+  },
+  "benchmark": {
+    "enabled": true,
+    "outputPath": ".nux/benchmarks.jsonl"
+  },
+  "roles": ["architect", "coder", "reviewer", "tester", "documenter"]
+}
