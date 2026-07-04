@@ -19,7 +19,13 @@
     "prepare": "husky",
     "random": "echo 'Random script'",
     "sso": "aws sso login --sso-session=opencode --no-browser",
-    "test": "echo 'do not run tests from root' && exit 1"
+    "test": "echo 'do not run tests from root' && exit 1",
+    "nux:doctor": "bun --cwd packages/nux run doctor",
+    "nux:plan": "bun --cwd packages/nux run plan",
+    "nux:risk": "bun --cwd packages/nux run risk",
+    "nux:learn": "bun --cwd packages/nux run learn",
+    "nux:memory": "bun --cwd packages/nux run memory",
+    "nux:bench": "bun --cwd packages/nux run bench"
   },
   "workspaces": {
     "packages": [
