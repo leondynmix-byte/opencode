@@ -1,0 +1,52 @@
+name: NuX CI
+
+on:
+  pull_request:
+    paths:
+      - "packages/nux/**"
+      - "configs/nux.agent.json"
+      - "Nux.md"
+      - "docs/nux-*.md"
+      - "RELEASE_NOTES_NUX.md"
+      - "package.json"
+      - ".github/workflows/nux-ci.yml"
+  push:
+    branches:
+      - dev
+      - "nux-*"
+    paths:
+      - "packages/nux/**"
+      - "configs/nux.agent.json"
+      - "Nux.md"
+      - "docs/nux-*.md"
+      - "RELEASE_NOTES_NUX.md"
+      - "package.json"
+      - ".github/workflows/nux-ci.yml"
+
+jobs:
+  nux:
+    name: Validate NuX
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.14
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: NuX doctor
+        run: bun run nux:doctor
+
+      - name: NuX smoke plan
+        run: bun run nux:plan "release readiness"
+
+      - name: NuX risk guard smoke test
+        run: bun run nux:risk "git status"
+
+      - name: NuX package typecheck
+        run: bun --cwd packages/nux run typecheck
