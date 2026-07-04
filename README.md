@@ -88,7 +88,11 @@ NuX docs:
 
 - [NuX overview](./Nux.md)
 - [NuX installation guide](./docs/nux-installation.md)
+- [شرح تنصيب NuX بالعربية](./docs/nux-install-ar.md)
 - [NuX release guide](./docs/nux-release-guide.md)
+- [شرح الريليس بالعربية](./docs/nux-release-ar.md)
+- [NuX release checklist](./docs/nux-release-checklist.md)
+- [GitHub UI release steps](./docs/nux-release-ui-steps.md)
 - [NuX release notes](./RELEASE_NOTES_NUX.md)
 - [NuX package README](./packages/nux/README.md)
 
