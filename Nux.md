@@ -73,7 +73,12 @@ NuX combines the best capabilities expected from advanced coding agents:
 ## Documentation
 
 - [Installation guide](./docs/nux-installation.md)
+- [دليل التنصيب بالعربية](./docs/nux-install-ar.md)
 - [Release guide](./docs/nux-release-guide.md)
+- [دليل الريليس بالعربية](./docs/nux-release-ar.md)
+- [Release checklist](./docs/nux-release-checklist.md)
+- [GitHub UI release steps](./docs/nux-release-ui-steps.md)
+- [Post-release roadmap](./docs/nux-post-release-roadmap.md)
 - [Release notes](./RELEASE_NOTES_NUX.md)
 - [Package README](./packages/nux/README.md)
 
